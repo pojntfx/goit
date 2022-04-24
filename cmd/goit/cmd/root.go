@@ -35,27 +35,11 @@ var rootCmd = &cobra.Command{
 Find more information at:
 https://github.com/pojntfx/goit`,
 	RunE: func(cmd *cobra.Command, args []string) error {
-		viper.SetEnvPrefix("goit")
+		viper.SetEnvPrefix("")
 		viper.SetEnvKeyReplacer(strings.NewReplacer("-", "_", ".", "_"))
 
 		if err := viper.BindPFlags(cmd.PersistentFlags()); err != nil {
 			return err
-		}
-
-		if u := os.Getenv("OIDC_ISSUER"); u != "" {
-			if viper.GetBool(verboseFlag) {
-				log.Println("Using OIDC issuer from OIDC_ISSUER env variable")
-			}
-
-			viper.Set(oidcIssuerFlag, u)
-		}
-
-		if u := os.Getenv("OIDC_CLIENT_ID"); u != "" {
-			if viper.GetBool(verboseFlag) {
-				log.Println("Using OIDC client ID from OIDC_CLIENT_ID env variable")
-			}
-
-			viper.Set(oidcClientIDFlag, u)
 		}
 
 		if strings.TrimSpace(viper.GetString(oidcIssuerFlag)) == "" {

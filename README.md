@@ -90,7 +90,6 @@ All command line arguments described above can also be set using environment var
 ## Acknowledgements
 
 - [coreos/go-oidc](https://github.com/coreos/go-oidc) provides the OpenID Connect library for goit.
-- All the rest of the authors who worked on the dependencies used! Thanks a lot!
 
 ## Contributing
 
@@ -110,6 +109,6 @@ Have any questions or need help? Chat with us [on Matrix](https://matrix.to/#/#g
 
 ## License
 
-goit (c) 2022 Felicitas Pojtinger and contributors
+goit (c) 2023 Felicitas Pojtinger and contributors
 
 SPDX-License-Identifier: AGPL-3.0

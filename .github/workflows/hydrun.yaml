@@ -27,12 +27,6 @@ jobs:
             flags: ""
             cmd: ./Hydrunfile go goit
             dst: out/*
-          - id: gccgo-goit
-            src: .
-            os: ghcr.io/pojntfx/bagccgop-base-sid
-            flags: -e '--privileged'
-            cmd: ./Hydrunfile gccgo goit
-            dst: out/*
 
     steps:
       - name: Maximize build space
